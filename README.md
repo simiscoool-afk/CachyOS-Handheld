@@ -5,17 +5,15 @@ Handheld Edition of CachyOS
 This will include our own calamares, adjusted desktop and scripts for proper installation on handhelds.
 We will provide only the online installation, so an internet connection will be mandatory.
 
-Currently it is not planned to support more bootloaders, but if there is any interest we can simply add them as in our default ISOs, for now we will default to systemd-boot.
-There will be support for 5 different filesystems:
+Currently it is not planned to support more bootloaders, but if there is any interest we can simply add them as in our default ISOs.
+There will be support for 4 different filesystems:
 
 - xfs
 - ext4
 - btrfs (default)
 - zfs
-- bcachefs
 
-There will also be automatic snapshotting implemented, to make it easy for users to rollback if they run into issues.
-Bcachefs could be generally a good idea for handhelds, but it is not fully ready yet and we don't suggest it for now.
+There is also automatic snapshotting with btrfs and limine to make it easy for users to rollback if they run into issues after updating.
 
 ## Features
 - scx_lavd used as default scheduler - LAVD is a latency sensitive scheduler, which is intended to be used for handhelds and gaming
@@ -28,8 +26,7 @@ Bcachefs could be generally a good idea for handhelds, but it is not fully ready
 - Support for Winesync/Fastsync/NTSync
 - BBRv3 used as default
 - OpenRGB Patches included
-- Screensharing for Discord (via xwaylandvideobridge)
-- CachyOS Kernel
+- CachyOS handheld Kernel
 - CachyOS Repository (all packages compiled with avx2/avx512 including auto detection for cpu support)
 - Orientation patches for several handheld devices
 - Support for Rog Ally patched in the kernel
