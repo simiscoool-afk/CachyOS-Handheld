@@ -1,21 +1,28 @@
 # CachyOS Handheld Edition
 
-Installation requires an internet connection. KDE Plasma is the only supported
-desktop environment. See the [Handheld Edition installation guide](https://wiki.cachyos.org/installation/installation_handheld/).
+To install CachyOS Handheld pleas follow the guide on the [wiki](https://wiki.cachyos.org/installation/installation_handheld/).
 
-Btrfs is the default filesystem. Installations using Btrfs and Limine get
-automatic snapshots for rollback. The installer also offers `systemd-boot`.
+Cachyos handheld only has KDE plasma as a DE choice, as it providing a familiar feel if you are coming from windows or steamOS. 
+
+When it comes to bootloaders we only offer systemd-boot and limine, limine is the default as it allows for a easy way to snapshot back in case of a bad update.
+
+For filesystems we offer a wide range but default to btrfs as it allows for bootable snapshots and are already setup after installation if you choose limine as your bootloader, here is the list of the ones that are offered:
+
+- xfs
+- ext4
+- btrfs (default)
+- zfs
+- F2FS
 
 ## Features
 - scx_lavd used as default scheduler - LAVD is a latency sensitive scheduler, which is intended to be used for handhelds and gaming
-- Steam Deck-like Steam experience
+- Steam Deck like Steam experience
 - Gamescope Session properly implemented
 - Kernel Patched to have support for Steam Deck OLED
 - Steam Deck OLED Firmware included as default
 - HDR correctly implemented via kernel patches
-- Gaming dependencies included via `cachyos-gaming-meta`
+- Gaming dependencies included via the `cachyos-gaming-meta` package
 - Support for Winesync/Fastsync/NTSync
-- BBRv3 used as default
 - OpenRGB Patches included
 - CachyOS handheld Kernel
 - CachyOS Repository (all packages compiled with avx2/avx512 including auto detection for cpu support)
@@ -29,8 +36,7 @@ automatic snapshots for rollback. The installer also offers `systemd-boot`.
 - Enhance Hardware Support
 
 ## Handheld hardware
-The kernel and [CHWD handheld profiles](https://github.com/CachyOS/chwd/blob/master/profiles/pci/handhelds/profiles.toml)
-provide device-specific settings.
+The kernel and [CHWD handheld profiles](https://github.com/CachyOS/chwd/blob/master/profiles/pci/handhelds/profiles.toml) provide device specific customization and settings.
 ### Steam Deck
 Valve's powerbuttond is used to handle power button events\
 Steam is used for controller support.
@@ -39,16 +45,14 @@ steam-powerbuttond-git is used to handle power button events.\
 InputPlumber is used for controller support.\
 Rogue enemy is an alternative that provides power profile switching and controller support.
 ### Lenovo Legion
-CHWD installs InputPlumber and `steamos-powerbuttond` on matching Lenovo Legion
-models.
+CHWD installs InputPlumber and `steamos-powerbuttond` on matching Lenovo Legion models.
 
 ## Untested hardware
 Screen orientation, audio, or controller support may need manual setup.
 
-## Desktop PCs
+## Desktop Support
 
-On desktop PCs, switching between Gaming Mode and Desktop Mode may be
-unreliable.
+On desktops, switching between Gaming Mode and Desktop Mode may be unreliable and face other issues as Cachyos handheld primarily focuses on handhelds, but we do what we can to still provide a good experience for those without handhelds.
 
 ## Additional information
 
